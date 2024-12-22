@@ -14,6 +14,7 @@ The **LLM Ops Project** provides a modular and scalable framework for managing l
 ## Project Structure
 ```plaintext
 llm_ops_project/
+
 ├── Dockerfile
 ├── config
 │   ├── __init__.py
@@ -106,6 +107,12 @@ llm_ops_project/
 - To run a Kubeflow pipeline:
     ```bash
     python examples/kubeflow_pipeline.py
+
+- To test Step Function integrations:
+    ```bash
+    python examples/step_function_handler_example.py
+    ```
+
     ```
 
 ## Development
@@ -118,6 +125,14 @@ Run unit and integration tests:
 ```bash
 pytest tests/
 ```
+- To run integration tests:
+    ```bash
+    pytest tests/integration/
+    ```
+- To test Jupyter notebooks:
+    ```bash
+    pytest --nbval notebooks/
+    ```
 
 ### CI/CD
 - GitHub Actions workflows are set up for:
