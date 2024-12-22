@@ -14,24 +14,64 @@ The **LLM Ops Project** provides a modular and scalable framework for managing l
 ## Project Structure
 ```plaintext
 llm_ops_project/
-│
-├── config/                 # Configuration files (models, logging, AWS settings)
-├── src/                    # Source code for the project
-│   ├── base/               # Core components (LLM client, Pinecone handler)
-│   ├── prompt_engineering/ # Prompt templates and LangChain chains
-│   ├── utils/              # Utility modules (logging, token counting)
-│   ├── handlers/           # Error handling
-├── data/                   # Data storage (prompts, embeddings, outputs)
-├── examples/               # Usage examples (LangChain, Pinecone, Kubeflow)
-├── notebooks/              # Jupyter notebooks for experimentation
-├── infra/                  # Infrastructure code (Terraform, Docker, Kubeflow)
-├── monitoring/             # Observability configurations (LangSmith, Prometheus)
-├── tests/                  # Unit and integration tests
-├── .github/                # CI/CD workflows (GitHub Actions)
-├── requirements.txt        # Python dependencies
-├── README.md               # Documentation
-├── Dockerfile              # Docker setup
-├── setup.py                # Python package setup
+├── Dockerfile
+├── config
+│   ├── __init__.py
+│   ├── aws_secrets.yaml
+│   ├── langchain_config.yaml
+│   ├── logging_config.yaml
+│   └── model_config.yaml
+├── data
+│   ├── cache
+│   ├── embeddings
+│   ├── outputs
+│   └── prompts
+├── examples
+│   ├── kubeflow_pipeline.py
+│   ├── pinecone_index.py
+│   ├── simple_chain.py
+│   └── step_function_handler_example.py
+├── infra
+│   ├── docker
+│   │   └── Dockerfile
+│   ├── kubeflow
+│   └── terraform
+│       └── secrets_manager.tf
+├── monitoring
+│   ├── aws_cloudwatch.py
+│   ├── langsmith
+│   └── prometheus_config.yaml
+├── notebooks
+│   ├── embeddings_analysis.ipynb
+│   ├── langchain_testing.ipynb
+│   └── pipeline_experiments.ipynb
+├── requirements.txt
+├── setup.py
+├── src
+│   ├── __init__.py
+│   ├── base
+│   │   ├── __init__.py
+│   │   ├── kubeflow_client.py
+│   │   ├── llm_client.py
+│   │   └── pinecone_handler.py
+│   ├── handlers
+│   │   ├── __init__.py
+│   │   ├── error_handler.py
+│   │   └── step_function_handler.py
+│   ├── prompt_engineering
+│   │   ├── __init__.py
+│   │   ├── chain_builder.py
+│   │   ├── dynamic_prompts.py
+│   │   └── templates.py
+│   └── utils
+│       ├── __init__.py
+│       ├── logger.py
+│       ├── rate_limiter.py
+│       └── token_counter.py
+└── tests
+    ├── integration
+    │   └── test_step_function_handler.py
+    └── unit
 ```
 
 ## Getting Started

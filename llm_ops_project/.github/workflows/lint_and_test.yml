@@ -1,0 +1,4 @@
+- name: Test Notebooks
+  run: |
+    pip install nbconvert pytest
+    pytest --nbval notebooks/
