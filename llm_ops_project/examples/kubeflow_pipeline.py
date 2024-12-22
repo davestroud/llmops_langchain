@@ -1,7 +1,28 @@
-from src.handlers.step_function_handler import StepFunctionHandler
-from config import aws_secrets
+from kfp import dsl
+from kfp.components import load_component_from_text
 
-def trigger_llm_ops_pipeline(data):
-    step_function_handler = StepFunctionHandler(aws_secrets["step_function_arn"])
-    response = step_function_handler.start_execution(input_payload=data)
-    print(f"Pipeline triggered. Execution ARN: {response['executionArn']}")
+@dsl.pipeline(name="LLM Ops Pipeline")
+def llm_ops_pipeline():
+    preprocess_op = load_component_from_text("""
+    name: Preprocess Data
+    implementation:
+      container:
+        image: my-docker-repo/preprocess-image:latest
+        command: ["python", "preprocess.py"]
+    """)
+    
+    train_op = load_component_from_text("""
+    name: Train Model
+    implementation:
+      container:
+        image: my-docker-repo/train-image:latest
+        command: ["python", "train.py"]
+    """)
+
+    preprocess_task = preprocess_op()
+    train_task = train_op(preprocess_task.outputs['processed_data'])
+
+if __name__ == "__main__":
+    from kfp.client import Client
+    client = Client()
+    client.create_run_from_pipeline_func(llm_ops_pipeline, arguments={})

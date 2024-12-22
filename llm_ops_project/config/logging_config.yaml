@@ -1,0 +1,29 @@
+version: 1
+formatters:
+  simple:
+    format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  detailed:
+    format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s [%(filename)s:%(lineno)d]"
+
+handlers:
+  console:
+    class: logging.StreamHandler
+    level: DEBUG
+    formatter: simple
+    stream: ext://sys.stdout
+
+  file:
+    class: logging.FileHandler
+    level: INFO
+    formatter: detailed
+    filename: "logs/llm_ops.log" # TODO: where to store logs?
+
+loggers:
+  llm_ops:
+    level: DEBUG
+    handlers: [console, file]
+    propagate: no
+
+root:
+  level: WARNING
+  handlers: [console, file]

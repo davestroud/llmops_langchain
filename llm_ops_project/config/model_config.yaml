@@ -1,0 +1,20 @@
+# TODO: do a more thorough model config for the project
+
+model:
+  type: llama
+  version: LLaMA-2-7B
+  path: /home/ubuntu/.cache/huggingface/hub/models--llama--llama-2-7b
+  tokenizer_path: /home/ubuntu/.cache/huggingface/tokenizers/llama-2-7b
+  load_in_8bit: true
+  use_gpu: true
+
+training:
+  learning_rate: 5e-5
+  batch_size: 16
+  num_epochs: 5
+  gradient_accumulation_steps: 4
+
+inference:
+  temperature: 0.8
+  max_tokens: 512
+  top_p: 0.9

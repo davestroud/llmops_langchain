@@ -10,7 +10,7 @@ setup(
         "pinecone-client>=2.2.1",
         "pyyaml>=6.0",
         "python-dotenv>=0.19.0",
-        "asyncio>=3.4.3",
+        "asyncio>=3.4.3", #TODO: add more dependencies
     ],
     author="David Stroud",
     author_email="david@davidstroud.com",
