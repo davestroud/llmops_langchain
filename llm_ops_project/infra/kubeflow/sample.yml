@@ -13,9 +13,9 @@ spec:
         template: train
   - name: preprocess
     container:
-      image: my-docker-repo/preprocess:latest
-      command: ["python", "/app/preprocess.py"]
+      image: my-docker-repo/preprocess:latest # TODO: change to the actual image
+      command: ["python", "/app/preprocess.py"] # TODO: change to the actual entrypoint
   - name: train
     container:
-      image: my-docker-repo/train:latest
-      command: ["python", "/app/train.py"]
+      image: my-docker-repo/train:latest # TODO: change to the actual image name
+      command: ["python", "/app/train.py"] # TODO: change to the actual entrypoint
