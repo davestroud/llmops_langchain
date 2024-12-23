@@ -20,3 +20,4 @@ def lambda_handler(event, context):
         "output_key": output_key,
         "output_bucket": output_bucket
     }
+    

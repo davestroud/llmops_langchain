@@ -23,9 +23,9 @@ resource "aws_iam_policy" "step_functions_policy" {
         "Effect": "Allow",
         "Action": [
           "lambda:InvokeFunction",
-          "sagemaker:CreateTrainingJob",
-          "sagemaker:CreateEndpoint",
-          "sagemaker:DescribeEndpoint"
+          "sagemaker:CreateTrainingJob", # TODO: change to the actual action
+          "sagemaker:CreateEndpoint", # TODO: change to the actual action
+          "sagemaker:DescribeEndpoint" # TODO: change to the actual action
         ],
         "Resource": "*"
       }
