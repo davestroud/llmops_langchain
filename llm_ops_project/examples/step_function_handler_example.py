@@ -1,22 +1,20 @@
-from src.handlers.step_function_handler import StepFunctionHandler
+import boto3
+import json
 
-def run_step_function_example():
-    # Instantiate the StepFunctionHandler
-    step_function = StepFunctionHandler()
+# Initialize AWS Step Functions client
+client = boto3.client("stepfunctions", region_name="us-west-2")
 
-    # Define a payload for the state machine
-    payload = {
-        "task": "LLM Ops example",
-        "parameters": {"key": "value"}
-    }
+# Define the state machine ARN and input
+state_machine_arn = "arn:aws:states:us-west-2:123456789012:stateMachine:MyStateMachine"
+input_payload = {
+    "task": "process_data",
+    "params": {"data_location": "s3://my-bucket/input-data/"}
+}
 
-    # Trigger the step function and monitor
-    execution_arn = step_function.trigger_state_machine(payload)
-    print(f"Step Function Execution ARN: {execution_arn}")
+# Start the execution
+response = client.start_execution(
+    stateMachineArn=state_machine_arn,
+    input=json.dumps(input_payload)
+)
 
-    # Wait for completion and fetch the result
-    result = step_function.get_execution_result(execution_arn)
-    print("Execution Result:", result)
-
-if __name__ == "__main__":
-    run_step_function_example()
+print("Execution ARN:", response["executionArn"])
