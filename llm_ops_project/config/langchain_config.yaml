@@ -6,8 +6,8 @@ llm:
 
 retriever:
   type: pinecone
-  api_key: YOUR_PINECONE_API_KEY # TODO: get from secrets manager
-  environment: YOUR_PINECONE_ENVIRONMENT # TODO: get from secrets manager
+  api_key: ${PINECONE_API_KEY} # Retrieved from environment
+  environment: ${PINECONE_ENV} # Retrieved from environment
   index_name: llm-retrieval-index
 
 chains:

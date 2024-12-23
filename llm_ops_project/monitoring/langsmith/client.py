@@ -1,8 +1,13 @@
 import os
 from langsmith.client import LangSmithClient
 
-api_key = os.getenv("LANGSMITH_API_KEY")
-client = LangSmithClient(api_key=api_key)
+# Retrieve API keys and environment variables from the environment
+langsmith_api_key = os.getenv("LANGSMITH_API_KEY")
+pinecone_api_key = os.getenv("PINECONE_API_KEY")
+pinecone_env = os.getenv("PINECONE_ENV")
+
+# Initialize the LangSmith client
+client = LangSmithClient(api_key=langsmith_api_key)
 
 def log_chain_performance(chain_name, latency, token_usage):
     client.log_metric(chain_name, "latency", latency)
