@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  generateName: llm-pipeline-
+spec:
+  entrypoint: main
+  templates:
+  - name: main
+    steps:
+    - - name: preprocess
+        template: preprocess
+      - name: train
+        template: train
+  - name: preprocess
+    container:
+      image: my-docker-repo/preprocess:latest
+      command: ["python", "/app/preprocess.py"]
+  - name: train
+    container:
+      image: my-docker-repo/train:latest
+      command: ["python", "/app/train.py"]
