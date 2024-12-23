@@ -1,79 +1,64 @@
 # LLM Ops Project
 
 ## Overview
-The **LLM Ops Project** provides a modular and scalable framework for managing large language models (LLMs) and their associated workflows. It is designed for ease of integration with tools such as LangChain, Pinecone, and Kubeflow, while leveraging best practices for infrastructure, monitoring, and CI/CD.
+The **LLM Ops Project** provides a modular and scalable framework for managing large language models (LLMs) and their associated workflows. It integrates seamlessly with tools like LangChain, Pinecone, and Kubeflow, while leveraging best practices for infrastructure, monitoring, and CI/CD.
 
 ## Features
 - **Prompt Engineering**: Predefined and dynamic prompt templates for LLM workflows.
 - **LangChain Integration**: Customizable chains to manage LLM tasks.
-- **Pinecone Vector Database**: Store and query embeddings efficiently.
-- **Kubeflow Pipelines**: Automate and monitor machine learning workflows.
-- **Monitoring and Observability**: LangSmith and AWS CloudWatch integration.
+- **Pinecone Vector Database**: Efficient storage and querying of embeddings.
+- **Kubeflow Pipelines**: Automation and monitoring of machine learning workflows.
+- **Monitoring and Observability**: Integration with LangSmith, AWS CloudWatch, and Prometheus.
 - **Infrastructure as Code**: Terraform scripts for reproducible deployments.
+
+---
 
 ## Project Structure
 ```plaintext
 llm_ops_project/
-
-├── Dockerfile
-├── config
-│   ├── __init__.py
-│   ├── aws_secrets.yaml
-│   ├── langchain_config.yaml
-│   ├── logging_config.yaml
-│   └── model_config.yaml
-├── data
-│   ├── cache
-│   ├── embeddings
-│   ├── outputs
-│   └── prompts
-├── examples
-│   ├── kubeflow_pipeline.py
-│   ├── pinecone_index.py
-│   ├── simple_chain.py
-│   └── step_function_handler_example.py
-├── infra
-│   ├── docker
-│   │   └── Dockerfile
-│   ├── kubeflow
-│   └── terraform
-│       └── secrets_manager.tf
-├── monitoring
-│   ├── aws_cloudwatch.py
-│   ├── langsmith
-│   └── prometheus_config.yaml
-├── notebooks
-│   ├── embeddings_analysis.ipynb
-│   ├── langchain_testing.ipynb
-│   └── pipeline_experiments.ipynb
-├── requirements.txt
-├── setup.py
-├── src
-│   ├── __init__.py
-│   ├── base
-│   │   ├── __init__.py
-│   │   ├── kubeflow_client.py
-│   │   ├── llm_client.py
-│   │   └── pinecone_handler.py
-│   ├── handlers
-│   │   ├── __init__.py
-│   │   ├── error_handler.py
-│   │   └── step_function_handler.py
-│   ├── prompt_engineering
-│   │   ├── __init__.py
-│   │   ├── chain_builder.py
-│   │   ├── dynamic_prompts.py
-│   │   └── templates.py
-│   └── utils
-│       ├── __init__.py
-│       ├── logger.py
-│       ├── rate_limiter.py
-│       └── token_counter.py
-└── tests
-    ├── integration
-    │   └── test_step_function_handler.py
-    └── unit
+├── README.md                           # Project documentation.
+├── Dockerfile                          # Main Dockerfile for the project.
+├── config/                             # Configuration files for various components.
+│   ├── aws_secrets.yaml                # AWS secrets configuration.
+│   ├── langchain_config.yaml           # LangChain configuration.
+│   ├── logging_config.yaml             # Logging configuration.
+│   └── model_config.yaml               # Model-specific parameters.
+├── data/                               # Data directory.
+│   ├── cache/                          # Cached intermediate files.
+│   ├── embeddings/                     # Generated embeddings.
+│   ├── outputs/                        # Final outputs.
+│   └── prompts/                        # Prompt templates and examples.
+├── examples/                           # Example scripts demonstrating functionality.
+│   ├── kubeflow_pipeline.py            # Example of a Kubeflow pipeline.
+│   ├── pinecone_index.py               # Pinecone setup and usage.
+│   ├── simple_chain.py                 # Simple LangChain example.
+│   └── step_function_handler_example.py # AWS Step Functions example.
+├── infra/                              # Infrastructure-related scripts.
+│   ├── docker/                         # Additional Docker configurations.
+│   ├── kubeflow/                       # Kubeflow pipeline configurations.
+│   ├── lambda/                         # AWS Lambda scripts.
+│   └── terraform/                      # Terraform scripts for cloud infrastructure.
+├── monitoring/                         # Monitoring and telemetry tools.
+│   ├── aws_cloudwatch.py               # AWS CloudWatch integration.
+│   ├── grafana_dashboards.json         # Grafana dashboard configurations.
+│   ├── langsmith/                      # LangSmith monitoring tools.
+│   ├── log_parser.py                   # Log parsing utilities.
+│   └── prometheus_config.yaml          # Prometheus configuration.
+├── notebooks/                          # Jupyter notebooks for prototyping.
+│   ├── embeddings_analysis.ipynb       # Analysis and visualization of embeddings.
+│   ├── langchain_testing.ipynb         # LangChain experimentation.
+│   └── pipeline_experiments.ipynb      # Pipeline experiments.
+├── requirements.txt                    # Python dependencies.
+├── setup.py                            # Setup script for packaging.
+├── src/                                # Core source code.
+│   ├── base/                           # Base modules for integrations.
+│   ├── handlers/                       # Error and Step Functions handlers.
+│   ├── prompt_engineering/             # Prompt engineering utilities.
+│   └── utils/                          # General utilities.
+└── tests/                              # Unit and integration tests.
 ```
+
+---
 
 ## Getting Started
 
@@ -85,97 +70,89 @@ llm_ops_project/
 
 ### Installation
 1. Clone the repository:
-    ```bash
-    git clone https://github.com/your_username/llm_ops_project.git
-    cd llm_ops_project
-    ```
+   ```bash
+   git clone https://github.com/your_username/llm_ops_project.git
+   cd llm_ops_project
+   ```
 2. Install dependencies:
-    ```bash
-    pip install -r requirements.txt
-    ```
+   ```bash
+   pip install -r requirements.txt
+   ```
+
 3. Configure environment variables (e.g., AWS credentials).
 
 ### Run Examples
-- To test LangChain workflows:
-    ```bash
-    python examples/simple_chain.py
-    ```
-- To create and query a Pinecone index:
-    ```bash
-    python examples/pinecone_index.py
-    ```
-- To run a Kubeflow pipeline:
-    ```bash
-    python examples/kubeflow_pipeline.py
+- Test LangChain workflows:
+   ```bash
+   python examples/simple_chain.py
+   ```
+- Create and query a Pinecone index:
+   ```bash
+   python examples/pinecone_index.py
+   ```
+- Run a Kubeflow pipeline:
+   ```bash
+   python examples/kubeflow_pipeline.py
+   ```
+- Test AWS Step Function integration:
+   ```bash
+   python examples/step_function_handler_example.py
+   ```
 
-- To test Step Function integrations:
-    ```bash
-    python examples/step_function_handler_example.py
-    ```
-
-    ```
+---
 
 ## Development
+
 ### Directory Structure
-- **`src/`**: Contains the core modules for LLM integrations, prompt engineering, and utilities.
-- **`config/`**: Holds YAML files for configuring models, logging, and AWS credentials.
+- **`src/`**: Core modules for LLM integration, prompt engineering, and utilities.
+- **`config/`**: YAML configuration files for models, logging, and AWS credentials.
 
 ### Testing
-Run unit and integration tests:
+Run tests:
 ```bash
 pytest tests/
 ```
-- To run integration tests:
-    ```bash
-    pytest tests/integration/
-    ```
-- To test Jupyter notebooks:
-    ```bash
-    pytest --nbval notebooks/
-    ```
 
-### CI/CD
-- GitHub Actions workflows are set up for:
-  - Linting and testing (`.github/workflows/lint_and_test.yml`).
-  - Deployment to AWS (`.github/workflows/deploy.yml`).
+---
 
 ## Infrastructure
-- **Terraform**: Scripts for deploying required AWS resources (e.g., S3 buckets, Lambda functions).
-- **Docker**: Containerize workflows for reproducibility.
-- **Kubeflow**: Manage pipelines for training and deployment.
+- **Terraform**: Scripts for managing AWS infrastructure.
+- **Docker**: Containerization for consistent environments.
+- **Kubeflow**: Orchestration of machine learning workflows.
+
+---
 
 ## Monitoring
 - **LangSmith**: Observability for LangChain workflows.
-- **AWS CloudWatch**: Logs and metrics for infrastructure.
-- **Prometheus**: Monitoring for Kubeflow.
+- **AWS CloudWatch**: Log and metric monitoring.
+- **Prometheus**: Metrics scraping and alerting.
+- **Grafana**: Visualization for Prometheus metrics.
 
-## Components
-- **AWS CloudWatch:** Logs and metrics for the AWS ecosystem.
-- **LangSmith:** Monitoring for LangChain-based workflows.
-- **Prometheus:** Metrics scraping and alerting.
-- **Grafana:** Visualization for Prometheus metrics.
-
-## How to Use
-1. Configure AWS credentials and run `aws_cloudwatch.py` to push metrics.
-2. Use LangSmith client scripts to track LangChain performance.
-3. Start Prometheus with `prometheus_config.yaml` and visualize in Grafana using `grafana_dashboard.json`.
+---
 
 ## Future Enhancements
 - Add OpenTelemetry for distributed tracing.
-- Include alerts for key performance metrics.
+- Enhance CI/CD workflows for deployment pipelines.
 
+---
 
 ## Contributing
 1. Fork the repository.
 2. Create a feature branch:
-    ```bash
-    git checkout -b feature/new_feature
-    ```
+   ```bash
+   git checkout -b feature/new_feature
+   ```
 3. Commit changes and open a pull request.
+
+---
 
 ## License
 This project is licensed under the MIT License. See the `LICENSE` file for details.
 
+---
+
 ## Contact
 For questions or feedback, reach out to [David Stroud](mailto:david@davidstroud.me).
+
+---
 
