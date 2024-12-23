@@ -149,6 +149,22 @@ pytest tests/
 - **AWS CloudWatch**: Logs and metrics for infrastructure.
 - **Prometheus**: Monitoring for Kubeflow.
 
+## Components
+- **AWS CloudWatch:** Logs and metrics for the AWS ecosystem.
+- **LangSmith:** Monitoring for LangChain-based workflows.
+- **Prometheus:** Metrics scraping and alerting.
+- **Grafana:** Visualization for Prometheus metrics.
+
+## How to Use
+1. Configure AWS credentials and run `aws_cloudwatch.py` to push metrics.
+2. Use LangSmith client scripts to track LangChain performance.
+3. Start Prometheus with `prometheus_config.yaml` and visualize in Grafana using `grafana_dashboard.json`.
+
+## Future Enhancements
+- Add OpenTelemetry for distributed tracing.
+- Include alerts for key performance metrics.
+
+
 ## Contributing
 1. Fork the repository.
 2. Create a feature branch:
