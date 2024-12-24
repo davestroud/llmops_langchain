@@ -10,6 +10,9 @@ retriever:
   environment: ${PINECONE_ENV} # Retrieved from environment
   index_name: llm-retrieval-index
 
+langsmith:
+  api_key: ${LANGSMITH_API_KEY} # Retrieved from environment
+
 chains:
   - name: summarization_chain
     steps:

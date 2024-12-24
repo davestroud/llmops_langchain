@@ -1,4 +1,5 @@
 import boto3
+import time
 
 cloudwatch = boto3.client('cloudwatch', region_name='us-west-2')
 
