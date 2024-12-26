@@ -1,6 +1,10 @@
 import os
+from dotenv import load_dotenv
 import logging
 from langsmith.client import LangSmithClient
+
+# Load environment variables from .env file
+load_dotenv()
 
 # Retrieve the LangSmith API key from the environment
 langsmith_api_key = os.getenv("LANGSMITH_API_KEY")
