@@ -44,9 +44,18 @@ jobs:
     - name: Notify Lint and Test Results
       uses: slackapi/slack-github-action@v1.23.0
       with:
-        slack-webhook-url: ${{ secrets.SLACK_WEBHOOK }}
-        text: |
-          Lint and Test Results:
-          * Lint: ${{ steps.lint.outcome }}
-          * Unit Tests: ${{ steps.unit-tests.outcome }}
+        channel-id: ${{ secrets.SLACK_CHANNEL_ID }}
+        payload: |
+          {
+            "text": "Lint and Test Results:",
+            "blocks": [
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "*Lint and Test Results:*\n• Lint: ${{ steps.lint.outcome }}\n• Unit Tests: ${{ steps.unit-tests.outcome }}"
+                }
+              }
+            ]
+          }
           * Integration Tests: ${{ steps.integration-tests.outcome }}
