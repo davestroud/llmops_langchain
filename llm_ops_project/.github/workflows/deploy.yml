@@ -44,7 +44,7 @@ jobs:
     - name: Notify Lint and Test Results
       uses: slackapi/slack-github-action@v1.23.0
       with:
-        channel-id: ${{ secrets.SLACK_CHANNEL_ID }}
+        channel-id: ${{ secrets.SLACK_WEBHOOK }}
         payload: |
           {
             "text": "Lint and Test Results:",
