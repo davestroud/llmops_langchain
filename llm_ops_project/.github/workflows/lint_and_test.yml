@@ -1,4 +1,48 @@
-- name: Test Notebooks
-  run: |
-    pip install nbconvert pytest
-    pytest --nbval notebooks/
+name: Lint and Test
+
+on:
+  push:
+    branches:
+      - '**'
+  pull_request:
+
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.12'
+
+    - name: Install Dependencies
+      run: |
+        pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Lint Code
+      run: |
+        pip install flake8
+        flake8 src/ tests/ --count --select=E9,F63,F7,F82 --show-source --statistics
+
+    - name: Run Unit Tests
+      run: |
+        pip install pytest
+        pytest tests/unit/ --maxfail=5 --disable-warnings
+
+    - name: Run Integration Tests
+      run: |
+        pytest tests/integration/ --maxfail=5 --disable-warnings
+
+    - name: Notify Lint and Test Results
+      uses: slackapi/slack-github-action@v1.23.0
+      with:
+        slack-webhook-url: ${{ secrets.SLACK_WEBHOOK }}
+        text: |
+          Lint and Test Results:
+          * Lint: ${{ job.status }}
+          * Tests: ${{ job.status }}

@@ -1,40 +1,45 @@
-name: Deploy LLMOps Pipeline
+name: Deploy to AWS
 
 on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
+    - name: Checkout Code
       uses: actions/checkout@v3
 
-    - name: Set up Terraform
-      uses: hashicorp/setup-terraform@v2
+    - name: Set up Python
+      uses: actions/setup-python@v4
       with:
-        terraform_wrapper: false
+        python-version: '3.12'
 
-    - name: Initialize Terraform
-      run: terraform init
-
-    - name: Validate Terraform
-      run: terraform validate
-
-    - name: Apply Terraform
-      env:
-        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-      run: terraform apply -auto-approve
-
-    - name: Deploy Lambda
-      env:
-        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+    - name: Install Dependencies
       run: |
-        cd infra/lambda/
-        zip preprocess_data.zip preprocess_data.py
-        aws lambda update-function-code --function-name preprocess-data --zip-file fileb://preprocess_data.zip
+        pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Deploy Terraform
+      working-directory: infra/terraform
+      run: |
+        terraform init
+        terraform validate
+        terraform plan -out=tfplan
+        terraform apply -auto-approve tfplan
+
+    - name: Deploy AWS Lambda
+      working-directory: infra/lambda
+      run: |
+        zip function.zip preprocess.data.py
+        aws lambda update-function-code --function-name preprocess-data --zip-file fileb://function.zip
+
+    - name: Notify Success
+      uses: slackapi/slack-github-action@v1.23.0
+      with:
+        slack-webhook-url: ${{ secrets.SLACK_WEBHOOK }}
+        text: 'Deployment to AWS was successful!'
