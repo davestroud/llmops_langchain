@@ -2,7 +2,7 @@ import pinecone
 from langchain.vectorstores import Pinecone
 
 # Initialize Pinecone
-pinecone.init(api_key="your-pinecone-api-key", environment="us-west1-gcp")
+pinecone.init(api_key="your-pinecone-api-key", environment="us-east-1-aws")
 
 # Create an index
 index_name = "llm-ops-index"
