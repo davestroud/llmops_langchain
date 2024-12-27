@@ -25,16 +25,19 @@ jobs:
         pip install -r requirements.txt
 
     - name: Lint Code
+      id: lint
       run: |
         pip install flake8
         flake8 src/ tests/ --count --select=E9,F63,F7,F82 --show-source --statistics
 
     - name: Run Unit Tests
+      id: unit-tests
       run: |
         pip install pytest
         pytest tests/unit/ --maxfail=5 --disable-warnings
 
     - name: Run Integration Tests
+      id: integration-tests
       run: |
         pytest tests/integration/ --maxfail=5 --disable-warnings
 
@@ -44,5 +47,6 @@ jobs:
         slack-webhook-url: ${{ secrets.SLACK_WEBHOOK }}
         text: |
           Lint and Test Results:
-          * Lint: ${{ job.status }}
-          * Tests: ${{ job.status }}
+          * Lint: ${{ steps.lint.outcome }}
+          * Unit Tests: ${{ steps.unit-tests.outcome }}
+          * Integration Tests: ${{ steps.integration-tests.outcome }}
