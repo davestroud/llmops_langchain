@@ -1,3 +1,7 @@
+# TODO: This is a placeholder for the actual docker build and push workflow.
+# We need to figure out how to build and push the docker images for the components.
+# We need to figure out how to build and push the docker image for the Kubeflow pipeline.
+
 name: Build and Push Docker Images
 
 on:

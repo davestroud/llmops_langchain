@@ -1,4 +1,5 @@
 # TODO: Docker for Kubeflow. Where will be the docker image? What will be in the docker image?
+# TODO: Where should the example code be? Should it be in the components folder? Should it be in the examples folder?
 
 from kfp import dsl
 from kfp.components import load_component_from_text
