@@ -2,7 +2,7 @@ import boto3
 import json
 
 # Initialize AWS Step Functions client
-client = boto3.client("stepfunctions", region_name="us-west-2")
+client = boto3.client("stepfunctions", region_name="us-east-1")
 
 # Define the state machine ARN and input
 state_machine_arn = "arn:aws:states:us-west-2:123456789012:stateMachine:MyStateMachine"
