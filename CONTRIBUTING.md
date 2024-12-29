@@ -83,7 +83,7 @@ If you add new functionality, please add tests to the tests/ directory.
 ### Documentation Contributions
 If your changes affect documentation:
 
-1. Update or add relevant files in the docs/ directory.
+1. Update or add relevant files in the [docs](https://github.com/davestroud/llmops_langchain/docs)directory.
 2. Ensure any new documentation follows the existing format and structure.
 
 ### Need Help?
