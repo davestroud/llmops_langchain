@@ -19,3 +19,9 @@ Provide an explation of the OpenAI API and how it works.
 OpenWebUI + Ollama installation: https://docs.openwebui.com/getting-started/
 Provide an explation of the OpenWebUI and how it works.
 
+**Advanced**
+
+CS336: Language Modeling from Scratch
+
+https://stanford-cs336.github.io/spring2024/
+ https://github.com/stanford-cs336/spring2024-assignment1-basics/tree/master
