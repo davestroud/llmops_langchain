@@ -12,3 +12,10 @@ DAIR.AI Courses https://dair-ai.thinkific.com/bundles/pro
 3. Advanced Prompt Engineering
 4. Introctuion to Prompt Engineering
 5. Cursor: Coding with AI
+
+Ollama OpenAI API compatibility: https://github.com/ollama/ollama/blob/main/docs/openai.md
+Provide an explation of the OpenAI API and how it works.
+
+OpenWebUI + Ollama installation: https://docs.openwebui.com/getting-started/
+Provide an explation of the OpenWebUI and how it works.
+
