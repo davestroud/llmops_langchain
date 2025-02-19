@@ -29,7 +29,7 @@ VS Code is a code editor that uses AI to help you write code. It's a powerful to
 Turn any Git repository into a simple text digest of its codebase.
 This is useful for feeding a codebase into any LLM.
 
-[Gitingest](https://github.com/gitingest/gitingest)
+[Gitingest](https://gitingest.com/)
 ---
 
 # Courses
