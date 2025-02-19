@@ -25,7 +25,11 @@ Cursor is a code editor that uses AI to help you write code. It's a powerful too
 VS Code is a code editor that uses AI to help you write code. It's a powerful tool that can help you write code faster and more efficiently.
 [VS Code Website](https://code.visualstudio.com/)
 
+## Gitingest 
+Turn any Git repository into a simple text digest of its codebase.
+This is useful for feeding a codebase into any LLM.
 
+[Gitingest](https://github.com/gitingest/gitingest)
 ---
 
 # Courses
