@@ -13,6 +13,11 @@ Learn how to create, train, and tweak large language models (LLMs) by building o
 
 # Software
 
+## Transformer Explained
+Transformer is a neural network architecture that has fundamentally changed the approach to Artificial Intelligence.
+
+[Transformer Explained](https://poloclub.github.io/transformer-explainer/)
+
 ## Flowise
 Open source low-code tool for developers to build customized LLM orchestration flow & AI agents  
 [Flowise Website](https://flowiseai.com/)
