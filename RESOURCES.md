@@ -32,7 +32,7 @@ Open source low-code tool for developers to build customized LLM orchestration f
 
 ## Ollama OpenAI API compatibility
 
-**#TODO** Provide an explanation of the OpenAI API and how it works.
+Ollama is a free, open-source tool that lets you run large language models (LLMs) locally on your computer. LLMs are AI programs that can understand and generate human-like text, code, and perform other tasks.
 
 [Ollama OpenAI Docs](https://github.com/ollama/ollama/blob/main/docs/openai.md)
 
@@ -40,11 +40,10 @@ Open source low-code tool for developers to build customized LLM orchestration f
 
 ## OpenWebUI + Ollama Installation
 
+Ollama is a free, open-source tool that lets you run large language models (LLMs) locally on your computer. LLMs are AI programs that can understand and generate human-like text, code, and perform other tasks
+
 [OpenWebUI Getting Started](https://docs.openwebui.com/getting-started/)
 
-**#TODO** Provide an explanation of the OpenWebUI and how it works.
-
----
 
 ## Prompt Engineering Guide
 Prompt engineering is a relatively new discipline for developing and optimizing prompts to efficiently use language models (LMs) for a wide variety of applications and research topics. Prompt engineering skills help to better understand the capabilities and limitations of large language models (LLMs).
