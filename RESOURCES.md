@@ -4,6 +4,15 @@
 Open source low-code tool for developers to build customized LLM orchestration flow & AI agents  
 [Flowise Website](https://flowiseai.com/)
 
+## Cursor
+Cursor is a code editor that uses AI to help you write code. It's a powerful tool that can help you write code faster and more efficiently.
+[Cursor Website](https://www.cursor.com/)
+
+## VS Code
+VS Code is a code editor that uses AI to help you write code. It's a powerful tool that can help you write code faster and more efficiently.
+[VS Code Website](https://code.visualstudio.com/)
+
+
 ---
 
 # Courses
