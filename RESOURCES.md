@@ -1,3 +1,8 @@
+# End to End LLM Workflow
+The LLM Ops Project provides a modular and scalable framework for managing large language models (LLMs) and their associated workflows. It integrates seamlessly with tools like LangChain, Pinecone, and Kubeflow, while leveraging best practices for infrastructure, monitoring, and CI/CD.
+
+[LLM Ops Project](https://github.com/davestroud/llmops_langchain)
+
 # Software
 
 ## Flowise
