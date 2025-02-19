@@ -6,7 +6,7 @@ The LLM Ops Project provides a modular and scalable framework for managing large
 [LLM Ops Project](https://github.com/davestroud/llmops_langchain)
 
 
-## LLMs from Scratch
+## LLMs from Scratch ~ Sebastian Raschka
 Learn how to create, train, and tweak large language models (LLMs) by building one from the ground up!In Build a Large Language Model (from Scratch) bestselling author Sebastian Raschka guides you step by step through creating your own LLM.
 
 [LLMs from Scratch](https://github.com/rasbt/LLMs-from-scratch)
