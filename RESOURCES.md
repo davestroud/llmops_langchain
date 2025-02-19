@@ -1,66 +1,86 @@
-**Software**
-Flowise
-Open source low-code tool for developers to build customized LLM orchestration flow & AI agents: 
+# Software
 
-https://flowiseai.com/
+## Flowise
+Open source low-code tool for developers to build customized LLM orchestration flow & AI agents  
+[Flowise Website](https://flowiseai.com/)
 
-**Courses**
-DAIR.AI Courses: 
-1. Introduction to AI Agents
-2. Introduction to RAG
-3. Advanced Prompt Engineering
-4. Introctuion to Prompt Engineering
-5. Cursor: Coding with AI
+---
 
-https://dair-ai.thinkific.com/bundles/pro
+# Courses
 
-Introduction to LangSmith:  
- * 1.1 Visibility While Building with Tracing 
- * 1.2 Testing and Evaluation 
- * 1.3 Prompt Engineering
- * 1.4 Collecting Human Feedback
- * 1.5 Production Observability
+## DAIR.AI Courses
+1. **Introduction to AI Agents**  
+2. **Introduction to RAG**  
+3. **Advanced Prompt Engineering**  
+4. **Introduction to Prompt Engineering**  
+5. **Cursor: Coding with AI**  
 
- https://academy.langchain.com/enrollments 
+[DAIR.AI Course Bundle](https://dair-ai.thinkific.com/bundles/pro)
 
+---
 
+## Introduction to LangSmith
+1. **Visibility While Building with Tracing**  
+2. **Testing and Evaluation**  
+3. **Prompt Engineering**  
+4. **Collecting Human Feedback**  
+5. **Production Observability**
 
-Ollama OpenAI API compatibility: 
-TODO:Provide an explation of the OpenAI API and how it works.
+[LangSmith Academy](https://academy.langchain.com/enrollments)
 
- https://github.com/ollama/ollama/blob/main/docs/openai.md
+---
 
-OpenWebUI + Ollama installation: https://docs.openwebui.com/getting-started/
-TODO: Provide an explation of the OpenWebUI and how it works.
+## Ollama OpenAI API compatibility
 
-https://docs.openwebui.com/getting-started/
+**#TODO** Provide an explanation of the OpenAI API and how it works.
 
+[Ollama OpenAI Docs](https://github.com/ollama/ollama/blob/main/docs/openai.md)
 
-Prompt Engineering Guide: https://www.promptingguide.ai/
-Prompt engineering is a relatively new discipline for developing and optimizing prompts to efficiently use language models (LMs) for a wide variety of applications and research topics. Prompt engineering skills help to better understand the capabilities and limitations of large language models (LLMs)
+---
 
- https://www.promptingguide.ai/
+## OpenWebUI + Ollama Installation
 
-**Books**
- Focus is on ML/AI systems in production. I’m currently exploring creative use cases of AI in education and entertainment.
+[OpenWebUI Getting Started](https://docs.openwebui.com/getting-started/)
 
-  https://huyenchip.com/books/
+**#TODO** Provide an explanation of the OpenWebUI and how it works.
 
-**Videos**
-Transformers (how LLM work) explained visually: https://www.youtube.com/watch?v=wjZofJX0v4M&t=842s
-Attention in transformers, step-by-step: https://www.youtube.com/watch?v=eMlx5fFNoYc&t=514s
+---
 
+## Prompt Engineering Guide
+Prompt engineering is a relatively new discipline for developing and optimizing prompts to efficiently use language models (LMs) for a wide variety of applications and research topics. Prompt engineering skills help to better understand the capabilities and limitations of large language models (LLMs).
 
-**Advanced**
+[Prompt Engineering Guide](https://www.promptingguide.ai/)
 
-CS336: Language Modeling from Scratch:
+---
+
+# Books
+Focus is on ML/AI systems in production. I’m currently exploring creative use cases of AI in education and entertainment.
+
+[Huyen Chip’s Books](https://huyenchip.com/books/)
+
+---
+
+# Videos
+
+- **Transformers (how LLMs work) explained visually:**  
+  [Video Link](https://www.youtube.com/watch?v=wjZofJX0v4M&t=842s)
+
+- **Attention in transformers, step-by-step:**  
+  [Video Link](https://www.youtube.com/watch?v=eMlx5fFNoYc&t=514s)
+
+---
+
+# Advanced
+
+## CS336: Language Modeling from Scratch
 Language models serve as the cornerstone of modern natural language processing (NLP) applications and open up a new paradigm of having a single general purpose system address a range of downstream tasks. As the field of artificial intelligence (AI), machine learning (ML), and NLP continues to grow, possessing a deep understanding of language models becomes essential for scientists and engineers alike. This course is designed to provide students with a comprehensive understanding of language models by walking them through the entire process of developing their own. Drawing inspiration from operating systems courses that create an entire operating system from scratch, we will lead students through every aspect of language model creation, including data collection and cleansing for pre-training, transformer model construction, model training, and evaluation before deployment.
 
-https://stanford-cs336.github.io/spring2024/
-https://github.com/stanford-cs336/spring2024-assignment1-basics/tree/master
+- [Course Website](https://stanford-cs336.github.io/spring2024/)  
+- [Assignment 1 Basics](https://github.com/stanford-cs336/spring2024-assignment1-basics/tree/master)
 
- CS324: Language Models:
+---
 
- The field of natural language processing (NLP) has been transformed by massive pre-trained language models. They form the basis of all state-of-the-art systems across a wide range of tasks and have shown an impressive ability to generate fluent text and perform few-shot learning. At the same time, these models are hard to understand and give rise to new ethical and scalability challenges. In this course, students will learn the fundamentals about the modeling, theory, ethics, and systems aspects of large language models, as well as gain hands-on experience working with them.
+## CS324: Language Models
+The field of natural language processing (NLP) has been transformed by massive pre-trained language models. They form the basis of all state-of-the-art systems across a wide range of tasks and have shown an impressive ability to generate fluent text and perform few-shot learning. At the same time, these models are hard to understand and give rise to new ethical and scalability challenges. In this course, students will learn the fundamentals about the modeling, theory, ethics, and systems aspects of large language models, as well as gain hands-on experience working with them.
 
- https://stanford-cs324.github.io/winter2022/
+[Course Website](https://stanford-cs324.github.io/winter2022/)
