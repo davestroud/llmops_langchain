@@ -1,9 +1,10 @@
+**Software**
 Flowise
 Open source low-code tool for developers to build customized LLM orchestration flow & AI agents: 
 
 https://flowiseai.com/
 
-
+**Courses**
 DAIR.AI Courses: 
 1. Introduction to AI Agents
 2. Introduction to RAG
@@ -44,6 +45,11 @@ Prompt engineering is a relatively new discipline for developing and optimizing 
  Focus is on ML/AI systems in production. I’m currently exploring creative use cases of AI in education and entertainment.
 
   https://huyenchip.com/books/
+
+**Videos**
+Transformers (how LLM work) explained visually: https://www.youtube.com/watch?v=wjZofJX0v4M&t=842s
+Attention in transformers, step-by-step: https://www.youtube.com/watch?v=eMlx5fFNoYc&t=514s
+
 
 **Advanced**
 
